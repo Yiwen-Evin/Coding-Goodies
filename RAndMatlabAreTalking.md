@@ -22,11 +22,16 @@ recommend R CMD BATCH.  Please find the list of useful options and a comparison
 between Rscript and R CMD BATCH in the appendix. 
 
 About the .R file:
-# At the beginning of the R function, need to add libarary `R.matlab'.
-# Source other .R files.  In the example, I sourced 
+- At the beginning of the R function, need to add libarary `R.matlab'.
+- Source other .R files.  In the example, I sourced 
   1.`variable.R' which defines the value of the variables will be used.  It
   can be easily modified by the users.
   2. `simulationFun.R' which is the main function doing simulation.
-# At the end of the .R file, everything wanted should be saved into a .mat
+- At the end of the .R file, everything wanted should be saved into a .mat
   file with the `writeMat' function. 
+```{r}
+outputpath <- "C:/eclipse/workspace/MatlabCodeADC/output/Results.mat"
+writeMat(outputpath, allDf=try$plotDf, simDf = try$simData)
+```
+
 
