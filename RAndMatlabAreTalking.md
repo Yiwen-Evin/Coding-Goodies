@@ -31,6 +31,7 @@ About the .R file:
   file with the `writeMat' function. 
 ```{r}
 outputpath <- "C:/eclipse/workspace/MatlabCodeADC/output/Results.mat"
+
 writeMat(outputpath, allDf=try$plotDf, simDf = try$simData)
 ```
 
