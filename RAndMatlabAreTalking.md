@@ -130,7 +130,7 @@ str(data)
 #  $ A: num [1, 1] 3
 #  $ B: num [1:2, 1:20] 1 1 1 1 1 1 1 1 1 1 ...
 #  - attr(*, "header")=List of 3
-#   ..$ description: chr "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Thu Nov 29 14:47:47 2012                                        "
+#   ..$ description: chr "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Thu Nov 29 14:47:47 2012 "
 #   ..$ version    : chr "5"
 #   ..$ endian     : chr "little"
 ```
@@ -150,7 +150,7 @@ str(data)
 # List of 1
 #  $ ABCD: num [1:5, 1:2] 0.545 0.51 0.061 0.766 1.273 ...
 #  - attr(*, "header")=List of 3
-#   ..$ description: chr "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Tue Nov 27 15:39:39 2012                                        "
+#   ..$ description: chr "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Tue Nov 27 15:39:39 2012  "
 #   ..$ version    : chr "5"
 #   ..$ endian     : chr "little"
 ```
@@ -183,7 +183,7 @@ res
 # 
 # attr(,"header")
 # attr(,"header")$description
-# [1] "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Thu Nov 29 14:54:43 2012                                        "
+# [1] "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Thu Nov 29 14:54:43 2012 "
 # 
 # attr(,"header")$version
 # [1] "5"
@@ -219,7 +219,7 @@ result
 # 
 # attr(,"header")
 # attr(,"header")$description
-# [1] "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Thu Nov 29 09:46:45 2012                                        "
+# [1] "MATLAB 5.0 MAT-file, Platform: PCWIN64, Created on: Thu Nov 29 09:46:45 2012 "
 # 
 # attr(,"header")$version
 # [1] "5"
