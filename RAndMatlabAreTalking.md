@@ -29,9 +29,9 @@ About the .R file:
   2. `simulationFun.R' which is the main function doing simulation.
 - At the end of the .R file, everything wanted should be saved into a .mat
   file with the `writeMat' function. 
-```{r}
-outputpath <- "C:/eclipse/workspace/MatlabCodeADC/output/Results.mat"
 
+```{r, eval=FALSE}
+outputpath <- "C:/eclipse/workspace/MatlabCodeADC/output/Results.mat"
 writeMat(outputpath, allDf=try$plotDf, simDf = try$simData)
 ```
 
