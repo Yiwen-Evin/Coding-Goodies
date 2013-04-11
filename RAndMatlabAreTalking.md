@@ -1,6 +1,6 @@
 R and Matlab Are Talking
 =================================
-
+  	
 As a statistician, having collaboration with scientists and engineers is nice.  
 But the coding languages we use are different.  It would be nicer if our code can talk to 
 each other. 
@@ -23,13 +23,13 @@ recommend R CMD BATCH.  Please find the list of useful options and a comparison
 between Rscript and R CMD BATCH in the appendix. 
 
 About the .R file:
-- At the beginning of the R function, need to add libarary `R.matlab'.
+		- At the beginning of the R function, need to add libarary 'R.matlab'.
 - Source other .R files.  In the example, I sourced 
-  1. `variable.R' which defines the value of the variables will be used.  It
-  can be easily modified by the users.
-  2. `simulationFun.R' which is the main function doing simulation.
+1. 'variable.R' which defines the value of the variables will be used.  It
+can be easily modified by the users.
+2. 'simulationFun.R' which is the main function doing simulation.
 - At the end of the .R file, everything wanted should be saved into a .mat
-  file with the `writeMat' function. 
+file with the 'writeMat' function. 
 
 ```
 outputpath <- "C:/eclipse/workspace/MatlabCodeADC/output/Results.mat"
@@ -42,7 +42,7 @@ Then, we need to load the saved .mat file in Matlab:
 load('C:/eclipse/workspace/MatlabCodeADC/output/Results.mat');
 ```
 
-See the demo file `script.m' can be found at <http://ctt.bdx.com:9090/svn/R/Steve/Matlab Code>
+See the demo file 'script.m' can be found at <http://ctt.bdx.com:9090/svn/R/Steve/Matlab Code>
 
 For more details, please see <http://rwiki.sciviews.org/doku.php?id=tips:callingr:matlab>
 
@@ -50,17 +50,17 @@ For more details, please see <http://rwiki.sciviews.org/doku.php?id=tips:calling
 ### Things to notice
 
 When calling R in matlab, the program automatically saves the plots created in
-the .R file into a pdf called `Rplots.pdf'.   These are the plots that would have shown in the R Graphics
+the .R file into a pdf called 'Rplots.pdf'.   These are the plots that would have shown in the R Graphics
 window if you run R directly, but not those plots that you saved into a pdf file
-with function `pdf()'.
+with function 'pdf()'.
 
 The objects saved to .mat file have different structures from those in .RData
-file.  For example, the most commonly used object class `data.frame' will look
-bad in `.mat' file.  Each column in the data frame will be saved as one object
-in an `subOjbect' as a $n \times 1$ matrix.  It's better to save a matrix, when
+file.  For example, the most commonly used object class 'data.frame' will look
+bad in '.mat' file.  Each column in the data frame will be saved as one object
+in an 'subOjbect' as a $n \times 1$ matrix.  It's better to save a matrix, when
 every elements is numerical, so that Matlab can load that as a matrix. The
 following is a comparison between objects saved as matrix, and those saved as
-data frame.  `simM' is saved as matrix, the two columns of which are 
+data frame.  'simM' is saved as matrix, the two columns of which are 
 `RD' and
 `Time'.
 
@@ -68,26 +68,26 @@ data frame.  `simM' is saved as matrix, the two columns of which are
 >> simM(1:5,:)
 
 ans =
-    1.4149   -8.5833
-    1.7683   -3.5833
-    1.7378    1.4167
-    1.3745    6.4167
-    1.2732   11.4167
+1.4149   -8.5833
+1.7683   -3.5833
+1.7378    1.4167
+1.3745    6.4167
+1.2732   11.4167
 
 >> simDf
 
 simDf = 
-              Set: {120x1 cell}
-               RD: [120x1 double]
-    GlucoseRegion: {120x1 cell}
-        LineGroup: {120x1 cell}
-             Time: [120x1 double]
+Set: {120x1 cell}
+RD: [120x1 double]
+GlucoseRegion: {120x1 cell}
+LineGroup: {120x1 cell}
+Time: [120x1 double]
 ```
 
-If a data.frame is saved to the `.mat' file, make sure that the column names
+If a data.frame is saved to the '.mat' file, make sure that the column names
 doesn't include '.'.  Matlab will problems reading that object. 
-
-
+		
+		
 # R calling Matlab
 
 ## Get prepared
@@ -111,7 +111,7 @@ matlab <- Matlab()
 Connect to the Matlab server, which must already be running 
 ```
 if (!open(matlab))
-  throw("Matlab server is not running: waited 30 seconds.")
+throw("Matlab server is not running: waited 30 seconds.")
 ```
 
 ## Example 1: a very basic expression.
@@ -191,11 +191,11 @@ res
 # attr(,"header")$endian
 # [1] "little"   
 ```
-
-
+		
+		
 ## Example 4: general Matlab commands
-We've seen the function `evaluate' several times so far.  The function
-`evaluate' is the key to call Matlab commands.
+We've seen the function 'evaluate' several times so far.  The function
+			`evaluate' is the key to call Matlab commands.
 It works as
 ```
 evaluate(matlab, "%The command line you would put in Matlab%");
@@ -206,8 +206,8 @@ Adding path:
 ```
 evaluate(matlab, "addpath('C:/eclipse/workspace/MatlabCodeADC/Matlab')")
 ```
-
-Calling the function `simple' which is saved in the simple.m file in the above
+		
+Calling the function 'simple' which is saved in the simple.m file in the above
 folder that we just added to the path. 
 ```
 evaluate(matlab, '[output]=simple(1, 0, 1, 2, 5);')
@@ -238,19 +238,19 @@ result <- readMat("output/Results.mat", verbos=TRUE)
 
 Again, the data read back into Matlab have different structure than they are in
 the RData file.  The above code is the same example as showed in section
-[Things to consider].  `result' is a list of $3$.  The first two are saved from the data
-frames, while the third one is saved from the matrix `simM'.  The numerical
-vectors will be saved as a vector as one element in the list.  The character
-string vector will be saved as a list, and that list, is one element in the
-upper level list.  The following example can explain this better. 
-
+[Things to consider].  'result' is a list of $3$.  The first two are saved from the data
+		frames, while the third one is saved from the matrix 'simM'.  The numerical
+		vectors will be saved as a vector as one element in the list.  The character
+		string vector will be saved as a list, and that list, is one element in the
+		upper level list.  The following example can explain this better. 
+		
 ```
 simDf <- result[[2]]
 length(simDf)
 # [1] 5
-
+		
 v<- simDf[[1]]
-
+		
 head(v, n=3)
 # $<NA>
 #      [,1]       
@@ -263,19 +263,20 @@ head(v, n=3)
 # $<NA>
 #      [,1]       
 # [1,] "Simulated"
-
-
+		
+		
 simM <- result[[3]]
 class(simM)
 # [1] "matrix"
-
+		
 head(simM, n=3)
 #           [,1]      [,2]
 # [1,] 1.4149073 -8.583333
 # [2,] 1.7683024 -3.583333
 # [3,] 1.7378493  1.416667
 ```
-
-
+		
+		
 My suggestion is, always save things in R as a matrix.  That would save a lot of
 trouble when transfer things between Matlab and R. 
+		
