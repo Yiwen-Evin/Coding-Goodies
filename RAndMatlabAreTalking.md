@@ -8,6 +8,7 @@ each other.
 Matlab calling R
 ------------------
 Basically, we are calling Rscript in Matlab with a Matlab function 
-<<echo=TRUE, eval=FALSE>>=
+
+```
 [status] = system('Rscript R\analysis_accuracySimulation.R ');
-@
+```
