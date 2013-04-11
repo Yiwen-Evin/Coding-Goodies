@@ -23,7 +23,7 @@ recommend R CMD BATCH.  Please find the list of useful options and a comparison
 between Rscript and R CMD BATCH in the appendix. 
 
 About the .R file:
-		- At the beginning of the R function, need to add libarary 'R.matlab'.
+- At the beginning of the R function, need to add libarary 'R.matlab'.
 - Source other .R files.  In the example, I sourced 
 1. 'variable.R' which defines the value of the variables will be used.  It
 can be easily modified by the users.
