@@ -30,9 +30,16 @@ About the .R file:
 - At the end of the .R file, everything wanted should be saved into a .mat
   file with the `writeMat' function. 
 
-```{r, eval=FALSE}
+```
 outputpath <- "C:/eclipse/workspace/MatlabCodeADC/output/Results.mat"
 writeMat(outputpath, allDf=try$plotDf, simDf = try$simData)
 ```
 
+
+Then, we need to load the saved .mat file in Matlab:
+```
+load('C:/eclipse/workspace/MatlabCodeADC/output/Results.mat');
+```
+
+See the demo file `script.m' can be found at <http://ctt.bdx.com:9090/svn/R/Steve/Matlab Code>
 
